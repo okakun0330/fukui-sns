@@ -75,6 +75,18 @@ h2{font-size:19px;font-weight:900;margin-bottom:6px}
 .scorechart .val{font-size:11px;font-weight:700;fill:var(--ink)}
 .scorechart rect.track{fill:var(--bg)}
 
+.tableview{margin-top:16px;border:1px solid var(--line);border-radius:10px;background:var(--white);overflow:hidden}
+.tableview summary{cursor:pointer;padding:14px 18px;font-size:13px;font-weight:700;color:var(--ind);list-style:none}
+.tableview summary::-webkit-details-marker{display:none}
+.tableview summary::before{content:"▸ ";display:inline-block}
+.tableview[open] summary::before{content:"▾ "}
+.tableview table{width:100%;border-collapse:collapse;font-size:12px}
+.tableview th,.tableview td{padding:9px 14px;text-align:right;border-top:1px solid var(--line);white-space:nowrap}
+.tableview th:first-child,.tableview td:first-child{text-align:left}
+.tableview th{color:var(--ink-2);font-weight:700;background:var(--bg)}
+.tableview td{color:var(--ink)}
+.tableview .twrap{overflow-x:auto}
+
 .pillbox{display:flex;gap:10px;flex-wrap:wrap}
 .pill{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:16px 18px;flex:1;min-width:200px}
 .pill .k{font-size:11px;color:var(--ink-3);margin-bottom:6px}
@@ -89,11 +101,21 @@ h2{font-size:19px;font-weight:900;margin-bottom:6px}
 footer{padding:28px 0;text-align:center;font-size:12px;color:var(--ink-3)}
 footer a{color:var(--blue);text-decoration:underline}
 
-@media(max-width:560px){
-  .row{grid-template-columns:32px 1fr;grid-template-areas:"rank name" "score score"}
-  .rank{grid-area:rank}
-  .name{grid-area:name}
-  .score{grid-area:score;text-align:left;margin-top:10px;display:flex;align-items:baseline;gap:8px}
+@media(max-width:640px){
+  .row{
+    grid-template-columns:32px 1fr;
+    grid-template-areas:"rank info" "score score";
+    row-gap:14px;
+    align-items:start;
+  }
+  .rank{grid-area:rank;padding-top:2px}
+  .info{grid-area:info;min-width:0}
+  .score{
+    grid-area:score;text-align:left;display:flex;align-items:baseline;gap:8px;
+    padding-top:12px;border-top:1px solid var(--line);
+  }
+  .score .l{margin-top:0}
+  .scorechart{max-width:100%}
 }
 </style>
 </head>
@@ -128,7 +150,7 @@ footer a{color:var(--blue);text-decoration:underline}
 
       <div class="row r1">
         <div class="rank">1</div>
-        <div>
+        <div class="info">
           <div class="name">サンプル食堂C</div>
           <div class="stats">
             <span>フォロワー <b>1,080人</b></span>
@@ -139,7 +161,7 @@ footer a{color:var(--blue);text-decoration:underline}
             <g><title>質スコア 100.0点</title>
               <text class="lbl" x="0" y="11" dominant-baseline="middle">質</text>
               <rect class="track" x="34" y="4" width="170" height="14" rx="4"/>
-              <rect x="34" y="4" width="170" height="14" rx="4" fill="var(--s-quality)"/>
+              <path d="M34,4 h166 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-166 Z" fill="var(--s-quality)"/>
               <text class="val" x="210" y="11" dominant-baseline="middle">100.0</text>
             </g>
             <g><title>規模スコア 0.0点</title>
@@ -150,7 +172,7 @@ footer a{color:var(--blue);text-decoration:underline}
             <g><title>勢いスコア 100.0点</title>
               <text class="lbl" x="0" y="63" dominant-baseline="middle">勢い</text>
               <rect class="track" x="34" y="56" width="170" height="14" rx="4"/>
-              <rect x="34" y="56" width="170" height="14" rx="4" fill="var(--s-momentum)"/>
+              <path d="M34,56 h166 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-166 Z" fill="var(--s-momentum)"/>
               <text class="val" x="210" y="63" dominant-baseline="middle">100.0</text>
             </g>
           </svg>
@@ -160,7 +182,7 @@ footer a{color:var(--blue);text-decoration:underline}
 
       <div class="row r2">
         <div class="rank">2</div>
-        <div>
+        <div class="info">
           <div class="name">サンプル食堂A</div>
           <div class="stats">
             <span>フォロワー <b>2,180人</b></span>
@@ -171,19 +193,19 @@ footer a{color:var(--blue);text-decoration:underline}
             <g><title>質スコア 37.1点</title>
               <text class="lbl" x="0" y="11" dominant-baseline="middle">質</text>
               <rect class="track" x="34" y="4" width="170" height="14" rx="4"/>
-              <rect x="34" y="4" width="63.1" height="14" rx="4" fill="var(--s-quality)"/>
+              <path d="M34,4 h59.1 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-59.1 Z" fill="var(--s-quality)"/>
               <text class="val" x="103.1" y="11" dominant-baseline="middle">37.1</text>
             </g>
             <g><title>規模スコア 44.6点</title>
               <text class="lbl" x="0" y="37" dominant-baseline="middle">規模</text>
               <rect class="track" x="34" y="30" width="170" height="14" rx="4"/>
-              <rect x="34" y="30" width="75.8" height="14" rx="4" fill="var(--s-scale)"/>
+              <path d="M34,30 h71.8 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-71.8 Z" fill="var(--s-scale)"/>
               <text class="val" x="115.8" y="37" dominant-baseline="middle">44.6</text>
             </g>
             <g><title>勢いスコア 18.3点</title>
               <text class="lbl" x="0" y="63" dominant-baseline="middle">勢い</text>
               <rect class="track" x="34" y="56" width="170" height="14" rx="4"/>
-              <rect x="34" y="56" width="31.1" height="14" rx="4" fill="var(--s-momentum)"/>
+              <path d="M34,56 h27.1 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-27.1 Z" fill="var(--s-momentum)"/>
               <text class="val" x="71.1" y="63" dominant-baseline="middle">18.3</text>
             </g>
           </svg>
@@ -193,7 +215,7 @@ footer a{color:var(--blue);text-decoration:underline}
 
       <div class="row r3">
         <div class="rank">3</div>
-        <div>
+        <div class="info">
           <div class="name">サンプル食堂B</div>
           <div class="stats">
             <span>フォロワー <b>5,210人</b></span>
@@ -209,7 +231,7 @@ footer a{color:var(--blue);text-decoration:underline}
             <g><title>規模スコア 100.0点</title>
               <text class="lbl" x="0" y="37" dominant-baseline="middle">規模</text>
               <rect class="track" x="34" y="30" width="170" height="14" rx="4"/>
-              <rect x="34" y="30" width="170" height="14" rx="4" fill="var(--s-scale)"/>
+              <path d="M34,30 h166 a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-166 Z" fill="var(--s-scale)"/>
               <text class="val" x="210" y="37" dominant-baseline="middle">100.0</text>
             </g>
             <g><title>勢いスコア 0.0点</title>
@@ -223,6 +245,23 @@ footer a{color:var(--blue);text-decoration:underline}
       </div>
 
     </div>
+
+    <details class="tableview">
+      <summary>データを表で見る</summary>
+      <div class="twrap">
+      <table>
+        <thead>
+          <tr><th>順位</th><th>企業名</th><th>フォロワー</th><th>エンゲージメント率</th><th>前月比</th><th>質スコア</th><th>規模スコア</th><th>勢いスコア</th><th>総合スコア</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>サンプル食堂C</td><td>1,080人</td><td>9.17%</td><td>+20.0%</td><td>100.0</td><td>0.0</td><td>100.0</td><td>75.0</td></tr>
+          <tr><td>2</td><td>サンプル食堂A</td><td>2,180人</td><td>4.70%</td><td>+3.8%</td><td>37.1</td><td>44.6</td><td>18.3</td><td>34.3</td></tr>
+          <tr><td>3</td><td>サンプル食堂B</td><td>5,210人</td><td>2.07%</td><td>+0.2%</td><td>0.0</td><td>100.0</td><td>0.0</td><td>25.0</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </details>
+
   </div>
 </section>
 
