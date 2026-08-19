@@ -20,6 +20,8 @@
   --ink-3:#9498A3;
   --gold:#C9962F;
   --green:#1E9E6B;
+  --ind:#C1442E;
+  --ind-lt:#FBE9E5;
   --maxw:880px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -35,7 +37,8 @@ header.site .wrap{display:flex;align-items:baseline;justify-content:space-betwee
 .crumbs a{text-decoration:underline}
 
 .hero{padding:40px 0 28px;border-bottom:1px solid var(--line)}
-.hero .cat{display:inline-block;background:var(--blue-lt);color:var(--blue);font-weight:700;font-size:12px;padding:5px 14px;border-radius:4px;margin-bottom:16px}
+.hero .cat{display:inline-block;background:var(--ind-lt);color:var(--ind);font-weight:700;font-size:12px;padding:5px 14px;border-radius:4px;margin-bottom:16px}
+header.site{border-bottom-color:var(--ind)}
 .hero h1{font-size:clamp(21px,4.4vw,28px);font-weight:900;line-height:1.55;margin-bottom:14px}
 .hero p{font-size:14px;color:var(--ink-2);max-width:640px}
 .hero .meta{margin-top:16px;font-size:12px;color:var(--ink-3)}
@@ -59,6 +62,7 @@ h2{font-size:19px;font-weight:900;margin-bottom:6px}
 .score .l{font-size:10px;color:var(--ink-3);margin-top:4px}
 .breakdown{margin-top:10px;display:flex;gap:6px;flex-wrap:wrap}
 .chip{font-size:10px;padding:3px 8px;border-radius:999px;background:var(--bg);color:var(--ink-2);border:1px solid var(--line)}
+.chip.strong{background:var(--ind-lt);color:var(--ind);border-color:var(--ind);font-weight:700}
 .up{color:var(--green);font-weight:700}
 
 .pillbox{display:flex;gap:10px;flex-wrap:wrap}
@@ -117,9 +121,9 @@ footer a{color:var(--blue);text-decoration:underline}
             <span class="up">前月比 +20.0%</span>
           </div>
           <div class="breakdown">
-            <span class="chip">質スコア 100.0</span>
+            <span class="chip strong">質スコア 100.0</span>
             <span class="chip">規模スコア 0.0</span>
-            <span class="chip">勢いスコア 100.0</span>
+            <span class="chip strong">勢いスコア 100.0</span>
           </div>
         </div>
         <div class="score"><div class="n">75.0</div><div class="l">総合スコア</div></div>
@@ -136,7 +140,7 @@ footer a{color:var(--blue);text-decoration:underline}
           </div>
           <div class="breakdown">
             <span class="chip">質スコア 37.1</span>
-            <span class="chip">規模スコア 44.6</span>
+            <span class="chip strong">規模スコア 44.6</span>
             <span class="chip">勢いスコア 18.3</span>
           </div>
         </div>
@@ -154,7 +158,7 @@ footer a{color:var(--blue);text-decoration:underline}
           </div>
           <div class="breakdown">
             <span class="chip">質スコア 0.0</span>
-            <span class="chip">規模スコア 100.0</span>
+            <span class="chip strong">規模スコア 100.0</span>
             <span class="chip">勢いスコア 0.0</span>
           </div>
         </div>
