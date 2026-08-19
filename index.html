@@ -56,27 +56,26 @@ h2{font-size:19px;font-weight:900;margin-bottom:6px}
 /* industry cards */
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .card{background:var(--white);border:1px solid var(--line);border-left:3px solid var(--line);border-radius:10px;padding:20px 22px;display:block;transition:.15s}
-.card:hover{border-color:var(--blue);border-left-color:var(--blue)}
+.card:hover{border-color:var(--blue);border-left-color:var(--blue);background:var(--blue-lt)}
 .card.soon{opacity:.55;pointer-events:none}
 .card.c-kensetsu{border-left-color:var(--kensetsu)}
-.card.c-kensetsu:hover{border-left-color:var(--kensetsu)}
 .card.c-inshoku{border-left-color:var(--inshoku)}
-.card.c-inshoku:hover{border-left-color:var(--inshoku)}
 .card .cn{font-weight:900;font-size:15px;margin-bottom:6px}
 .card .cs{font-size:12px;color:var(--ink-2)}
 .card .badge{display:inline-block;font-size:10px;font-weight:700;color:var(--blue);background:var(--blue-lt);padding:3px 9px;border-radius:999px;margin-bottom:10px}
 .card.soon .badge{color:var(--ink-3);background:var(--bg)}
-.card.c-kensetsu .badge{color:var(--kensetsu);background:var(--kensetsu-lt)}
-.card.c-inshoku .badge{color:var(--inshoku);background:var(--inshoku-lt)}
+.card .go{display:none;font-size:12px;font-weight:700;color:var(--blue);margin-top:10px}
+.card:not(.soon) .go{display:block}
 
 /* theme cards (採用/集客/コラム) */
 .themes{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .theme{background:var(--white);border:1px solid var(--line);border-left:3px solid var(--line);border-radius:10px;padding:22px;text-align:left;transition:.15s}
 .theme.c-saiyo{border-left-color:var(--blue)}
 .theme.c-shukyaku{border-left-color:var(--inshoku)}
-.theme:hover{border-color:var(--blue)}
+.theme:hover{border-color:var(--blue);background:var(--blue-lt)}
 .theme .tt{font-weight:700;font-size:14px;color:var(--ink);margin-bottom:6px}
 .theme .ts{font-size:12px;color:var(--ink-2)}
+.theme .go{font-size:12px;font-weight:700;color:var(--blue);margin-top:10px}
 
 /* search */
 .searchbox{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:22px}
@@ -143,11 +142,13 @@ footer a{color:var(--blue);text-decoration:underline}
         <div class="badge">3社を計測中</div>
         <div class="cn">建設業</div>
         <div class="cs">福井県 建設業 Instagramランキング</div>
+        <div class="go">ランキングを見る ›</div>
       </a>
       <a class="card c-inshoku" href="ranking-inshoku.html">
         <div class="badge">3社を計測中</div>
         <div class="cn">飲食業</div>
         <div class="cs">福井県 飲食店 Instagramランキング</div>
+        <div class="go">ランキングを見る ›</div>
       </a>
       <div class="card soon">
         <div class="badge">準備中</div>
@@ -172,10 +173,12 @@ footer a{color:var(--blue);text-decoration:underline}
       <a class="theme c-saiyo" href="usecase-saiyo.html">
         <div class="tt">採用で注目したいSNS</div>
         <div class="ts">採用にInstagramを活用している福井企業に共通する3つのポイント</div>
+        <div class="go">記事を読む ›</div>
       </a>
       <a class="theme c-shukyaku" href="usecase-shukyaku.html">
         <div class="tt">集客で注目したいSNS</div>
         <div class="ts">集客にInstagramを活用している福井企業に共通する3つのポイント</div>
+        <div class="go">記事を読む ›</div>
       </a>
     </div>
   </div>
@@ -189,6 +192,7 @@ footer a{color:var(--blue);text-decoration:underline}
     <a class="theme" href="guide-unyodaiko.html" style="display:block">
       <div class="tt">福井のSNS運用代行とは？費用相場と失敗しない選び方</div>
       <div class="ts">依頼できる範囲・費用相場・選び方のチェックポイントを解説</div>
+      <div class="go">記事を読む ›</div>
     </a>
   </div>
 </section>
