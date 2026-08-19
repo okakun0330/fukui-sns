@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FUKUI SNS｜福井県企業SNS専門メディア</title>
+<meta name="description" content="福井県企業のInstagramを毎月定点観測し、ランキング・成功事例を発信する専門メディア。採用・集客にSNSを活用したい福井県企業のための情報源です。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1B2A4A;
+  --navy-2:#26375C;
+  --blue:#2F6FED;
+  --blue-lt:#EAF1FE;
+  --bg:#F7F8FA;
+  --white:#FFFFFF;
+  --line:#E3E6EC;
+  --ink:#1A1C22;
+  --ink-2:#5B5F6B;
+  --ink-3:#9498A3;
+  --gold:#C9962F;
+  --green:#1E9E6B;
+  --maxw:880px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",-apple-system,sans-serif;line-height:1.85;letter-spacing:.01em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+header.site{background:var(--navy);color:#fff;padding:18px 0;border-bottom:3px solid var(--gold)}
+header.site .wrap{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.logo{font-weight:900;font-size:19px;letter-spacing:.02em}
+.logo small{display:block;font-size:10px;font-weight:500;color:#AEB8D6;letter-spacing:.16em;margin-top:2px}
+
+.hero{background:var(--navy);color:#fff;padding:52px 0 44px}
+.hero h1{font-size:clamp(26px,5.6vw,38px);font-weight:900;line-height:1.5;margin-bottom:16px}
+.hero p{font-size:14px;color:#C7CEE0;max-width:600px;line-height:1.9}
+.hero .disclose{margin-top:18px;display:inline-block;font-size:12px;color:#C7CEE0;border:1px solid #3C4C74;border-radius:6px;padding:8px 14px;background:rgba(255,255,255,.04)}
+
+section{padding:36px 0;border-bottom:1px solid var(--line)}
+.tag{display:inline-block;font-weight:700;font-size:11px;letter-spacing:.16em;color:var(--blue);margin-bottom:8px}
+h2{font-size:19px;font-weight:900;margin-bottom:6px}
+.sub{font-size:13px;color:var(--ink-2);margin-bottom:22px}
+
+/* highlight pills */
+.pillbox{display:flex;gap:10px;flex-wrap:wrap}
+.pill{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:16px 18px;flex:1;min-width:220px}
+.pill .k{font-size:11px;color:var(--ink-3);margin-bottom:6px}
+.pill .v{font-weight:700;font-size:14px}
+.pill .v small{display:block;font-weight:400;font-size:12px;color:var(--ink-2);margin-top:3px}
+
+/* industry cards */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:20px 22px;display:block;transition:.15s}
+.card:hover{border-color:var(--blue)}
+.card.soon{opacity:.55;pointer-events:none}
+.card .cn{font-weight:900;font-size:15px;margin-bottom:6px}
+.card .cs{font-size:12px;color:var(--ink-2)}
+.card .badge{display:inline-block;font-size:10px;font-weight:700;color:var(--blue);background:var(--blue-lt);padding:3px 9px;border-radius:999px;margin-bottom:10px}
+.card.soon .badge{color:var(--ink-3);background:var(--bg)}
+
+/* theme cards (採用/集客/コラム) */
+.themes{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.theme{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:22px;text-align:left;transition:.15s}
+.theme:hover{border-color:var(--blue)}
+.theme .tt{font-weight:700;font-size:14px;color:var(--ink);margin-bottom:6px}
+.theme .ts{font-size:12px;color:var(--ink-2)}
+
+/* search */
+.searchbox{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:22px}
+.searchbox input{width:100%;font-size:14px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-family:inherit}
+.searchbox input:focus{outline:2px solid var(--blue);border-color:var(--blue)}
+#results{margin-top:12px;display:grid;gap:8px}
+#results a{display:flex;justify-content:space-between;padding:10px 14px;background:var(--bg);border-radius:8px;font-size:13px}
+#results a:hover{background:var(--blue-lt)}
+#results .hint{font-size:12px;color:var(--ink-3);padding:6px 2px}
+
+footer{padding:28px 0;text-align:center;font-size:12px;color:var(--ink-3)}
+footer a{color:var(--blue);text-decoration:underline}
+
+@media(max-width:560px){
+  .grid,.themes{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <div class="logo">FUKUI SNS<small>福井県企業SNS専門メディア</small></div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>福井企業のSNSが、<br>全部わかる。</h1>
+    <p>福井県内企業のSNSアカウントを毎月定点観測し、ランキング・急上昇企業・成功事例を発信しています。「自社は何位か」「他社はどう活用しているか」を知りたいときに見てください。</p>
+    <div class="disclose">現在FUKUI SNSでは、福井県企業のInstagramを中心に定点観測しています</div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="tag">THIS MONTH</div>
+    <h2>今月のハイライト</h2>
+    <p class="sub">2026年8月版・全業界を通じての注目トピック</p>
+    <div class="pillbox">
+      <div class="pill">
+        <div class="k">今月の急上昇企業</div>
+        <div class="v">サンプル建設C<small>建設業／前月比 +24.6%</small></div>
+      </div>
+      <div class="pill">
+        <div class="k">今月のBEST POST</div>
+        <div class="v">サンプル食堂C<small>飲食業／いいね210 + コメント30</small></div>
+      </div>
+      <div class="pill">
+        <div class="k">今月のSNS AWARD</div>
+        <div class="v">近日公開<small>受賞企業には掲載バッジを進呈予定</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="tag">RANKING</div>
+    <h2>業界別SNSランキング</h2>
+    <p class="sub">業界ごとに、公開Instagramアカウントを比較</p>
+    <div class="grid">
+      <a class="card" href="ranking-kensetsu.html">
+        <div class="badge">3社を計測中</div>
+        <div class="cn">建設業</div>
+        <div class="cs">福井県 建設業 Instagramランキング</div>
+      </a>
+      <a class="card" href="ranking-inshoku.html">
+        <div class="badge">3社を計測中</div>
+        <div class="cn">飲食業</div>
+        <div class="cs">福井県 飲食店 Instagramランキング</div>
+      </a>
+      <div class="card soon">
+        <div class="badge">準備中</div>
+        <div class="cn">製造業</div>
+        <div class="cs">近日公開予定</div>
+      </div>
+      <div class="card soon">
+        <div class="badge">準備中</div>
+        <div class="cn">美容・サロン</div>
+        <div class="cs">近日公開予定</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="tag">USE CASE</div>
+    <h2>目的別に見る</h2>
+    <p class="sub">採用・集客、どちらの目的でSNSを使いたいかで探せます</p>
+    <div class="themes">
+      <a class="theme" href="usecase-saiyo.html">
+        <div class="tt">採用で注目したいSNS</div>
+        <div class="ts">採用にInstagramを活用している福井企業に共通する3つのポイント</div>
+      </a>
+      <a class="theme" href="usecase-shukyaku.html">
+        <div class="tt">集客で注目したいSNS</div>
+        <div class="ts">集客にInstagramを活用している福井企業に共通する3つのポイント</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="tag">COLUMN</div>
+    <h2>コラム</h2>
+    <p class="sub">SNS運用を検討する前に知っておきたいこと</p>
+    <a class="theme" href="guide-unyodaiko.html" style="display:block">
+      <div class="tt">福井のSNS運用代行とは？費用相場と失敗しない選び方</div>
+      <div class="ts">依頼できる範囲・費用相場・選び方のチェックポイントを解説</div>
+    </a>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="tag">SEARCH</div>
+    <h2>企業名から探す</h2>
+    <p class="sub">掲載企業名を入力すると、該当するランキングページへ移動します（現在はサンプルデータのみ）</p>
+    <div class="searchbox">
+      <input type="text" id="q" placeholder="例：サンプル建設A" autocomplete="off">
+      <div id="results"><div class="hint">計測中の6社から検索できます</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>掲載データは各社の公開Instagramアカウントをもとに毎月更新しています。ランキング掲載・修正のご相談は運営元までお問い合わせください。</p>
+    <p style="margin-top:10px">運営: <a href="http://film-club.info/" target="_blank" rel="noopener">Film倶楽部株式会社</a></p>
+  </div>
+</footer>
+
+<script>
+const companies = [
+  {name:"サンプル建設A", industry:"建設業", url:"ranking-kensetsu.html"},
+  {name:"サンプル建設B", industry:"建設業", url:"ranking-kensetsu.html"},
+  {name:"サンプル建設C", industry:"建設業", url:"ranking-kensetsu.html"},
+  {name:"サンプル食堂A", industry:"飲食業", url:"ranking-inshoku.html"},
+  {name:"サンプル食堂B", industry:"飲食業", url:"ranking-inshoku.html"},
+  {name:"サンプル食堂C", industry:"飲食業", url:"ranking-inshoku.html"},
+];
+const input = document.getElementById('q');
+const results = document.getElementById('results');
+input.addEventListener('input', () => {
+  const q = input.value.trim();
+  if (!q) {
+    results.innerHTML = '<div class="hint">計測中の6社から検索できます</div>';
+    return;
+  }
+  const hits = companies.filter(c => c.name.includes(q));
+  results.innerHTML = hits.length
+    ? hits.map(c => `<a href="${c.url}"><span>${c.name}</span><span>${c.industry} を見る ›</span></a>`).join('')
+    : '<div class="hint">該当する企業が見つかりませんでした</div>';
+});
+</script>
+
+</body>
+</html>
