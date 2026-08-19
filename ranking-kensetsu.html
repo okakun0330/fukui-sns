@@ -22,6 +22,9 @@
   --green:#1E9E6B;
   --ind:#4F7089;
   --ind-lt:#EAF0F3;
+  --s-quality:#4A3AA7;
+  --s-scale:#EB6834;
+  --s-momentum:#1BAF7A;
   --maxw:880px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -60,10 +63,17 @@ h2{font-size:19px;font-weight:900;margin-bottom:6px}
 .score{text-align:right}
 .score .n{font-weight:900;font-size:24px;color:var(--blue);line-height:1}
 .score .l{font-size:10px;color:var(--ink-3);margin-top:4px}
-.breakdown{margin-top:10px;display:flex;gap:6px;flex-wrap:wrap}
-.chip{font-size:10px;padding:3px 8px;border-radius:999px;background:var(--bg);color:var(--ink-2);border:1px solid var(--line)}
-.chip.strong{background:var(--ind-lt);color:var(--ind);border-color:var(--ind);font-weight:700}
 .up{color:var(--green);font-weight:700}
+
+/* score breakdown bar chart */
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+.legend .li{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--ink-2)}
+.legend .sw{width:10px;height:10px;border-radius:2px;flex:none}
+.scorechart{width:100%;max-width:300px;height:auto;margin-top:10px}
+.scorechart text{font-family:"Noto Sans JP",sans-serif}
+.scorechart .lbl{font-size:11px;fill:var(--ink-2)}
+.scorechart .val{font-size:11px;font-weight:700;fill:var(--ink)}
+.scorechart rect.track{fill:var(--bg)}
 
 .pillbox{display:flex;gap:10px;flex-wrap:wrap}
 .pill{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:16px 18px;flex:1;min-width:200px}
@@ -109,6 +119,11 @@ footer a{color:var(--blue);text-decoration:underline}
   <div class="wrap">
     <h2>総合ランキング</h2>
     <p class="sub">エンゲージメント率50%・アカウント規模25%・前月比の伸び25%で算出した総合スコア順</p>
+    <div class="legend">
+      <span class="li"><span class="sw" style="background:var(--s-quality)"></span>質スコア（エンゲージメント率）</span>
+      <span class="li"><span class="sw" style="background:var(--s-scale)"></span>規模スコア（フォロワー数）</span>
+      <span class="li"><span class="sw" style="background:var(--s-momentum)"></span>勢いスコア（前月比）</span>
+    </div>
     <div class="board">
 
       <div class="row r1">
@@ -120,11 +135,25 @@ footer a{color:var(--blue);text-decoration:underline}
             <span>エンゲージメント率 <b>7.22%</b></span>
             <span class="up">前月比 +24.6%</span>
           </div>
-          <div class="breakdown">
-            <span class="chip strong">質スコア 100.0</span>
-            <span class="chip">規模スコア 0.0</span>
-            <span class="chip strong">勢いスコア 100.0</span>
-          </div>
+          <svg class="scorechart" viewBox="0 0 300 78" role="img" aria-label="質スコア100.0 規模スコア0.0 勢いスコア100.0">
+            <g><title>質スコア 100.0点</title>
+              <text class="lbl" x="0" y="11" dominant-baseline="middle">質</text>
+              <rect class="track" x="34" y="4" width="170" height="14" rx="4"/>
+              <rect x="34" y="4" width="170" height="14" rx="4" fill="var(--s-quality)"/>
+              <text class="val" x="210" y="11" dominant-baseline="middle">100.0</text>
+            </g>
+            <g><title>規模スコア 0.0点</title>
+              <text class="lbl" x="0" y="37" dominant-baseline="middle">規模</text>
+              <rect class="track" x="34" y="30" width="170" height="14" rx="4"/>
+              <text class="val" x="40" y="37" dominant-baseline="middle">0.0</text>
+            </g>
+            <g><title>勢いスコア 100.0点</title>
+              <text class="lbl" x="0" y="63" dominant-baseline="middle">勢い</text>
+              <rect class="track" x="34" y="56" width="170" height="14" rx="4"/>
+              <rect x="34" y="56" width="170" height="14" rx="4" fill="var(--s-momentum)"/>
+              <text class="val" x="210" y="63" dominant-baseline="middle">100.0</text>
+            </g>
+          </svg>
         </div>
         <div class="score"><div class="n">75.0</div><div class="l">総合スコア</div></div>
       </div>
@@ -138,11 +167,26 @@ footer a{color:var(--blue);text-decoration:underline}
             <span>エンゲージメント率 <b>3.48%</b></span>
             <span class="up">前月比 +5.0%</span>
           </div>
-          <div class="breakdown">
-            <span class="chip strong">質スコア 36.7</span>
-            <span class="chip">規模スコア 30.5</span>
-            <span class="chip">勢いスコア 15.2</span>
-          </div>
+          <svg class="scorechart" viewBox="0 0 300 78" role="img" aria-label="質スコア36.7 規模スコア30.5 勢いスコア15.2">
+            <g><title>質スコア 36.7点</title>
+              <text class="lbl" x="0" y="11" dominant-baseline="middle">質</text>
+              <rect class="track" x="34" y="4" width="170" height="14" rx="4"/>
+              <rect x="34" y="4" width="62.4" height="14" rx="4" fill="var(--s-quality)"/>
+              <text class="val" x="102.4" y="11" dominant-baseline="middle">36.7</text>
+            </g>
+            <g><title>規模スコア 30.5点</title>
+              <text class="lbl" x="0" y="37" dominant-baseline="middle">規模</text>
+              <rect class="track" x="34" y="30" width="170" height="14" rx="4"/>
+              <rect x="34" y="30" width="51.9" height="14" rx="4" fill="var(--s-scale)"/>
+              <text class="val" x="91.9" y="37" dominant-baseline="middle">30.5</text>
+            </g>
+            <g><title>勢いスコア 15.2点</title>
+              <text class="lbl" x="0" y="63" dominant-baseline="middle">勢い</text>
+              <rect class="track" x="34" y="56" width="170" height="14" rx="4"/>
+              <rect x="34" y="56" width="25.8" height="14" rx="4" fill="var(--s-momentum)"/>
+              <text class="val" x="65.8" y="63" dominant-baseline="middle">15.2</text>
+            </g>
+          </svg>
         </div>
         <div class="score"><div class="n">29.8</div><div class="l">総合スコア</div></div>
       </div>
@@ -156,11 +200,24 @@ footer a{color:var(--blue);text-decoration:underline}
             <span>エンゲージメント率 <b>1.32%</b></span>
             <span class="up">前月比 +1.5%</span>
           </div>
-          <div class="breakdown">
-            <span class="chip">質スコア 0.0</span>
-            <span class="chip strong">規模スコア 100.0</span>
-            <span class="chip">勢いスコア 0.0</span>
-          </div>
+          <svg class="scorechart" viewBox="0 0 300 78" role="img" aria-label="質スコア0.0 規模スコア100.0 勢いスコア0.0">
+            <g><title>質スコア 0.0点</title>
+              <text class="lbl" x="0" y="11" dominant-baseline="middle">質</text>
+              <rect class="track" x="34" y="4" width="170" height="14" rx="4"/>
+              <text class="val" x="40" y="11" dominant-baseline="middle">0.0</text>
+            </g>
+            <g><title>規模スコア 100.0点</title>
+              <text class="lbl" x="0" y="37" dominant-baseline="middle">規模</text>
+              <rect class="track" x="34" y="30" width="170" height="14" rx="4"/>
+              <rect x="34" y="30" width="170" height="14" rx="4" fill="var(--s-scale)"/>
+              <text class="val" x="210" y="37" dominant-baseline="middle">100.0</text>
+            </g>
+            <g><title>勢いスコア 0.0点</title>
+              <text class="lbl" x="0" y="63" dominant-baseline="middle">勢い</text>
+              <rect class="track" x="34" y="56" width="170" height="14" rx="4"/>
+              <text class="val" x="40" y="63" dominant-baseline="middle">0.0</text>
+            </g>
+          </svg>
         </div>
         <div class="score"><div class="n">25.0</div><div class="l">総合スコア</div></div>
       </div>
